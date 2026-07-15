@@ -7,7 +7,7 @@ cask "anywherellm" do
   desc "Use an LLM in any focused text field via a global hotkey, without stealing focus"
   homepage "https://github.com/scian0204/AnywhereLLM"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "AnywhereLLM.app"
 
