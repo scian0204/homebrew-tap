@@ -5,7 +5,7 @@ scian0204의 Homebrew tap.
 ## 사용법
 
 ```bash
-brew install --cask --no-quarantine scian0204/tap/anywherellm
+brew install --cask scian0204/tap/anywherellm
 ```
 
 | Cask | 설명 |

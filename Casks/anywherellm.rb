@@ -11,13 +11,16 @@ cask "anywherellm" do
 
   app "AnywhereLLM.app"
 
+  # 공증 없는 자가서명 앱 — 격리 속성이 남으면 Gatekeeper가 "손상된 앱"으로 차단.
+  # Homebrew 6에서 --no-quarantine 플래그가 제거되어 설치 시 직접 제거한다.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/AnywhereLLM.app"]
+  end
+
   caveats <<~EOS
-    공증(notarization) 없이 자가서명된 앱입니다. 격리 속성이 붙으면 macOS가
-    "손상된 앱"으로 차단하므로 --no-quarantine 플래그로 설치하세요:
-
-      brew install --cask --no-quarantine scian0204/tap/anywherellm
-
-    이미 설치해서 차단됐다면:
+    공증(notarization) 없이 자가서명된 앱입니다. 설치 과정에서 격리(quarantine)
+    속성을 자동 제거합니다. 그래도 실행이 차단되면 수동으로:
 
       xattr -dr com.apple.quarantine /Applications/AnywhereLLM.app
 
