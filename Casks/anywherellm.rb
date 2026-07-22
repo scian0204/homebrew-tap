@@ -1,6 +1,6 @@
 cask "anywherellm" do
-  version "0.5.0"
-  sha256 "2e2239a6aa3c6f3a69fdabb051738666faae0d9f88dcde323cdc7a67691da264"
+  version "0.6.0"
+  sha256 "87b8ca398048ac66b5217bd6790850493c892d92a37a09417a0a822bf01d3231"
 
   url "https://github.com/scian0204/AnywhereLLM/releases/download/v#{version}/AnywhereLLM-#{version}-macos.zip"
   name "AnywhereLLM"
